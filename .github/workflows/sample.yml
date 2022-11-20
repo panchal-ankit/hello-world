@@ -38,7 +38,7 @@ jobs:
   dev_deploy:
    runs-on: ubuntu-latest
    needs: get_branch
-   if: ${{ needs.get_branch.outputs.branch == 'development' }}
+   if: ${{ ${{ github.ref }} == 'development' }}
    env: 
        AWS_DEFAULT_REGION: "us-east-1"
    steps:        
@@ -51,7 +51,7 @@ jobs:
   prod_deploy:
    runs-on: ubuntu-latest
    needs: get_branch
-   if: ${{ needs.get_branch.outputs.branch == 'main' }}
+   if: ${{ ${{ github.ref }} == 'main' }}
    env: 
        AWS_DEFAULT_REGION: "us-east-1"
    steps:        
