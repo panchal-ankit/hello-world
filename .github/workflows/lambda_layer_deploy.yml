@@ -50,6 +50,7 @@ jobs:
          with: 
            ref: 'development'
        - name: Run a devl deployment script
+         run: |
               ls -lrt
               cd lambda_layer
               pwd

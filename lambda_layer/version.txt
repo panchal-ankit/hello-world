@@ -1,1 +1,1 @@
-lambda layer version 1
+lambda layer version 2
