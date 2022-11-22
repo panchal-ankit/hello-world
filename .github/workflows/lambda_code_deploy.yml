@@ -52,7 +52,9 @@ jobs:
        - name: Run a devl deployment script
          run: |
               ls -lrt
-              cat app.txt
+              cd lambda_code
+              pwd
+              cat version.txt
   prod_deploy:
    runs-on: ubuntu-latest
    environment: prod
@@ -67,4 +69,6 @@ jobs:
        - name: Run a production deployment script
          run: |
               ls -lrt
-              cat app.txt
+              cd lambda_code
+              pwd
+              cat version.txt
