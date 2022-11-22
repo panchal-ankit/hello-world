@@ -1,13 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Lambda_Code_Deploy
+name: Lambda_Layer_Deploy
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" , "development" ]
-    paths: 'lambda_code/**'
+    paths: 'lambda_layer/**'
 
   # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch:
@@ -50,9 +50,8 @@ jobs:
          with: 
            ref: 'development'
        - name: Run a devl deployment script
-         run: |
               ls -lrt
-              cd lambda_code
+              cd lambda_layer
               pwd
               cat version.txt
   prod_deploy:
@@ -69,6 +68,6 @@ jobs:
        - name: Run a production deployment script
          run: |
               ls -lrt
-              cd lambda_code
+              cd lambda_layer
               pwd
               cat version.txt
