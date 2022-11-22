@@ -45,6 +45,8 @@ jobs:
    steps:        
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/checkout@v3
+         with: 
+           ref: 'development'
        - name: Run a devl deployment script
          run: |
               ls -lrt
@@ -57,6 +59,8 @@ jobs:
        AWS_DEFAULT_REGION: "us-east-1"
    steps:        
        - uses: actions/checkout@v3
+         with: 
+           ref: 'main'
        - name: Run a production deployment script
          run: |
               ls -lrt
